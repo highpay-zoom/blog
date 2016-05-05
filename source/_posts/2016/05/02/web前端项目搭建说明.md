@@ -1,7 +1,7 @@
 ---
 title: web前端项目搭建说明
 categories: [web前端]
-tags: [Webpack, ReactJS]
+tags: [Webpack, ReactJS, ChinSyun Pang]
 ---
 
 > Author: ChinSyun Pang

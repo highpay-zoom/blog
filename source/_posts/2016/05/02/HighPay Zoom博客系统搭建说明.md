@@ -1,7 +1,7 @@
 ---
 title: HighPay Zoom博客系统搭建说明
 categories: [杂谈]
-tags: [Hexo]
+tags: [Hexo, ChinSyun Pang]
 ---
 
 > Author: ChinSyun Pang

@@ -40,9 +40,9 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
   <ul>
     
-      <li><a href="/">Home</a></li>
+      <li><a href="/">主页</a></li>
     
-      <li><a href="/archives">Archives</a></li>
+      <li><a href="/archives">归档</a></li>
     
       <li><a href="/tags/法尔梅·邱/">法尔梅·邱</a></li>
     
@@ -53,7 +53,7 @@
 
     <article id="content" class="site-content">
       <main id="main" class="site-main posts-loop" role="main">
-        <article class="post article">
+        <article class="post article article-page">
 
   
   
@@ -74,10 +74,14 @@
 
   
 
-  <div class="article-content">
-    <div class="entry">
-      
-        <blockquote>
+  <div class="article-container">
+
+    <div class="article-main">
+
+      <div class="article-content">
+        <div class="entry">
+          
+            <blockquote>
 <p>Author: ChinSyun Pang<br>Weibo: <a href="http://weibo.com/arthinkingplus" target="_blank" rel="external">arthinking_plus</a><br>Posted in: <a href="http://www.itzhai.com/highpay-zoom-blog-build-intro.html" target="_blank" rel="external">HighPay Zoom博客系统搭建说明</a></p>
 </blockquote>
 <p>HighPay Zoom博客托管于Github,基于Hexo制作成静态博客;</p>
@@ -131,11 +135,11 @@
 <li><a href="http://www.imys.net/20150514/hexo-toc.html" target="_blank" rel="external">Hexo添加Toc支持，生成文章目录</a></li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-        <div class="article-meta pull-left">
           
+        </div>
+        <footer class="article-footer">
+            <div class="article-meta pull-left">
+              
   
 
   <span class="post-categories">
@@ -144,7 +148,7 @@
   </span>
 
 
-          
+              
   
 
   <span class="post-tags">
@@ -153,13 +157,35 @@
   </span>
 
 
-        </div>
-        
-    </footer>
+            </div>
+            
+        </footer>
+      </div>
+
+    </div>
+
+    <aside id="article-toc">
+      <div class="article-toc-inner">
+        <strong class="sidebar-title">Contents</strong>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo"><span class="post-toc-text">Hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接下来是使用Hexo的使用方法"><span class="post-toc-text">接下来是使用Hexo的使用方法:</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Hexo相关的问题"><span class="post-toc-text">Hexo相关的问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#References"><span class="post-toc-text">References</span></a></li></ol>
+      </div>
+    </aside>
+
   </div>
+
 </article>
 
-  
+<script>
+  window.onscroll = function(){
+    var t = document.documentElement.scrollTop || document.body.scrollTop;
+    var aside = document.getElementById("article-toc");
+    if(t >= 300) {
+      aside.className = "fixed";
+    } else {
+      aside.className = "";
+    }
+  }
+</script>
 
 
 
@@ -168,7 +194,8 @@
 
     <footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
   Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
-  Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+  Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>.
+  Improve by <a href="github.com/arthinking">arthinking</a>
   </br>
   
   &copy; 2016 Highpay Zoom Group.

@@ -1,0 +1,16 @@
+menu:
+  Home: /
+  Archives: /archives
+  法尔梅·邱: /tags/法尔梅·邱/
+  ChinSyun Pang: /tags/ChinSyun-Pang/
+
+# duoshuo comment
+duoshuo: false
+duoshuo_name: 
+
+# disqus comment
+disqus: false
+disqus_shortname: 
+
+# google analytics
+googleTrackId: 

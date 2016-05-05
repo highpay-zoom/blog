@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HighPay Zoom后台项目架构简介 | HighPay zoom | 虚怀若谷</title>
+  <meta name="author" content="Highpay Zoom Group.">
+  
+  <meta name="description" content="Struggle for HighPay zoom.">
+  
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="HighPay Zoom后台项目架构简介"/>
+  <meta property="og:site_name" content="HighPay zoom"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="HighPay zoom" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div id="page" class="site">
+  <div id="primary" class="content-area">
+
+    <header id="header" class="inner"><div class="site-branding">
+  <h1 class="site-title">
+    <a href="/">HighPay zoom</a>
+  </h1>
+  <p class="site-description">虚怀若谷</p>
+</div>
+<nav id="site-navigation" class="main-navigation" role="navigation">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+
+    <article id="content" class="site-content">
+      <main id="main" class="site-main posts-loop" role="main">
+        <article class="post article">
+
+  
+  
+    <h3 class="article-title"><span>HighPay Zoom后台项目架构简介</span></h3>
+  
+
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/05/02/5.2后台项目架构简介/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-05-05T12:19:41.000Z">
+          2016-05-05
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>Author: ChinSyun Pang</p>
+</blockquote>
+<p>##项目背景</p>
+<p>将所学的东西，进行一次运用和实践</p>
+<p>##项目结构</p>
+<p>app-parent 管理项目的依赖<br>app-common 项目公共的部分,以后随着规模的扩大，可以进一步的拆分，目前只有工具类和自定义监听<br>app-inter-api 项目接口API暴露层，使用阿里的dubbo框架，注册中心选用zookeeper<br>app-service  实现接口层，处理业务逻辑，与DB交互，这里我选择使用spring-data-jpa；dubbo服务提供者<br>app-rest   客户端交互层，主要拿到service的数据，进行组装，然后交付给客户端；mvc实现层，选用spring mvc；dubbo服务的消费者<br>app-document  存放项目文档，以及在开发学习中的收获和心路历程</p>
+<p>##整合体会</p>
+<p>1.注意dubbo与log4j的关系<br>2.注意dubbo框架下读取外部实体，报 not an entity<br>3.jndi数据源命名空间的配置<br>4.在eclipse中，服务端和客户端在同一个项目中，如何保证客户端项目引用服务端项目的jar，而不是其项目<br>5.选择spring-data-jpa与现有接触的hibernateDAO原生API的比较<br>6.maven的基本用法，对于其父子继承，聚合还有些疑惑</p>
+
+      
+    </div>
+    <footer class="article-footer">
+        <div class="article-meta pull-left">
+          
+  
+
+  <span class="post-categories">
+    <i class="icon-categories"></i>
+    <a href="/categories/架构/">架构</a>
+  </span>
+
+
+          
+  
+
+  <span class="post-tags">
+    <i class="icon-tags"></i>
+    <a href="/tags/Dubbo/">Dubbo</a>, <a href="/tags/法尔梅·邱/">法尔梅·邱</a>
+  </span>
+
+
+        </div>
+        
+    </footer>
+  </div>
+</article>
+
+  
+
+
+
+      </main>
+    </article>
+
+    <footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+  Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+  </br>
+  
+  &copy; 2016 Highpay Zoom Group.
+  
+</p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

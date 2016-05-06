@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HighPay Zoom 网络抓取 | HighPay zoom | 虚怀若谷</title>
+  <meta name="author" content="Highpay Zoom Group.">
+  
+  <meta name="description" content="Struggle for HighPay zoom.">
+  
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="HighPay Zoom 网络抓取"/>
+  <meta property="og:site_name" content="HighPay zoom"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="HighPay zoom" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div id="page" class="site">
+  <div id="primary" class="content-area">
+
+    <header id="header" class="inner"><div class="site-branding">
+  <h1 class="site-title">
+    <a href="/">HighPay zoom</a>
+  </h1>
+  <p class="site-description">虚怀若谷</p>
+</div>
+<nav id="site-navigation" class="main-navigation" role="navigation">
+  <ul>
+    
+      <li><a href="/">主页</a></li>
+    
+      <li><a href="/tags/法尔梅·邱/">法尔梅·邱</a></li>
+    
+      <li><a href="/tags/ChinSyun-Pang/">ChinSyun Pang</a></li>
+    
+      <li><a href="/2016/05/05/HighPay%20Zoom%20技术栈/">技术栈</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+  </ul>
+</nav></header>
+
+    <article id="content" class="site-content">
+      <main id="main" class="site-main posts-loop" role="main">
+        <article class="post article article-page">
+
+  
+  
+    <h3 class="article-title"><span>HighPay Zoom 网络抓取</span></h3>
+  
+
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/05/05/HighPay Zoom 网络抓取/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-05-06T01:17:19.000Z">
+          2016-05-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-container">
+
+    <div class="article-main">
+
+      <div class="article-content">
+        <div class="entry">
+          
+            <blockquote>
+<p>Author: 法尔梅·邱</p>
+</blockquote>
+<p>##聊一聊网络爬虫</p>
+<ul>
+<li>需要用户cookie</li>
+<li>不需要用户cookie</li>
+</ul>
+<p>这里给大家介绍下，需要用户登录信息的网络抓取</p>
+<p>##第一步 找到你要抓取的站点的入口</p>
+<ul>
+<li>目标站点的官方网站</li>
+<li>目标站点发布的官方APP</li>
+<li>目标站点的官方微信公众号</li>
+</ul>
+<h2 id="第二步-探索登录表单"><a href="#第二步-探索登录表单" class="headerlink" title="第二步 探索登录表单"></a>第二步 探索登录表单</h2><ul>
+<li>从访问官网首页到登录表单，是否下发cookie</li>
+<li>是否需要验证码，验证码与什么有强的关联关系（后面会举实例说明）</li>
+<li>登录表单提交时，观察提交的参数列表，是否加密（借助fiddler4即可）</li>
+<li>登录成功后，是否有大于300的重定向（发生重定向后，怎么办？）</li>
+<li>登录成功返回数据（1、json数据 2、html）</li>
+</ul>
+<p>##第三步 维持cookie</p>
+<ul>
+<li>程序从开始抓取一直到登录成功时的cookie收集，合并，更新（这里我使用的是threadLocal来存放）</li>
+<li>对于两次下发的cookie，如果出现相同的key，合并规则是什么；</li>
+<li>程序在登录成功后，再去抓取其他接口的数据时要带上cookie</li>
+</ul>
+<h2 id="常用的技巧"><a href="#常用的技巧" class="headerlink" title="常用的技巧"></a>常用的技巧</h2><ul>
+<li>json字符串转换成java对象（这样的工具类非常多）</li>
+<li>正则表达式去扣出想要的东西</li>
+<li>对密码加密的情景分析</li>
+<li>js加密与java加密通信</li>
+<li>构造http请求（header，body）</li>
+<li>对异常情况的处理，比如超时，404,403,405等情景的分析</li>
+</ul>
+<h2 id="难点问题"><a href="#难点问题" class="headerlink" title="难点问题"></a>难点问题</h2><ul>
+<li>大量请求同时登录，如果控制并发（目前未使用多线程和NIO相关）</li>
+<li>JS加密，怎样还原加密过程</li>
+<li>验证码出现的过程，比如密码错3次出现验证码，一直出现验证码，重新建立连接后不需要验证码等情景</li>
+<li>http请求构造时需要带上特定的参数，比如content-type,referer,Accept等</li>
+</ul>
+<h2 id="关于作者"><a href="#关于作者" class="headerlink" title="关于作者"></a>关于作者</h2><p>  法梅尔.邱 码农一枚，志存高远，并为之努力！QQ:344651570 欢迎交流</p>
+
+          
+        </div>
+        <footer class="article-footer">
+            <div class="article-meta pull-left">
+              
+  
+
+  <span class="post-categories">
+    <i class="icon-categories"></i>
+    <a href="/categories/网络抓取/">网络抓取</a>
+  </span>
+
+
+              
+  
+
+  <span class="post-tags">
+    <i class="icon-tags"></i>
+    <a href="/tags/法尔梅·邱/">法尔梅·邱</a>, <a href="/tags/spider/">spider</a>
+  </span>
+
+
+            </div>
+            
+        </footer>
+      </div>
+
+    </div>
+
+    <aside id="article-toc">
+      <div class="article-toc-inner">
+        <strong class="sidebar-title">Contents</strong>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二步-探索登录表单"><span class="post-toc-text">第二步 探索登录表单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用的技巧"><span class="post-toc-text">常用的技巧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#难点问题"><span class="post-toc-text">难点问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于作者"><span class="post-toc-text">关于作者</span></a></li></ol>
+      </div>
+    </aside>
+
+  </div>
+
+</article>
+
+<script>
+  window.onscroll = function(){
+    var t = document.documentElement.scrollTop || document.body.scrollTop;
+    var aside = document.getElementById("article-toc");
+    if(t >= 380) {
+      aside.className = "fixed";
+    } else {
+      aside.className = "";
+    }
+  }
+</script>
+
+
+
+      </main>
+    </article>
+
+    <footer id="colophon" class="site-footer" role="contentinfo"><p class="site-info">
+  Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+  Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>.
+  Improve by <a href="https://github.com/arthinking">arthinking</a>
+  </br>
+  
+  &copy; 2016 Highpay Zoom Group.
+  
+</p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

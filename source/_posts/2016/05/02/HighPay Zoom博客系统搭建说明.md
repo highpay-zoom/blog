@@ -1,5 +1,6 @@
 ---
 title: HighPay Zoom博客系统搭建说明
+date: 2016-05-02
 categories: [杂谈]
 tags: [Hexo, ChinSyun Pang]
 ---

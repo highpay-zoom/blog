@@ -40,7 +40,7 @@
 <nav id="site-navigation" class="main-navigation" role="navigation">
   <ul>
     
-      <li><a href="/">Home</a></li>
+      <li><a href="/">主页</a></li>
     
       <li><a href="/tags/法尔梅·邱/">法尔梅·邱</a></li>
     
@@ -48,7 +48,7 @@
     
       <li><a href="/2016/05/05/HighPay%20Zoom%20技术栈/">技术栈</a></li>
     
-      <li><a href="/archives">Archives</a></li>
+      <li><a href="/archives">归档</a></li>
     
   </ul>
 </nav></header>
@@ -113,7 +113,7 @@
 <p>注意,我们这里的<code>branch</code>需要设置为master,否则,css,js,图片等资源文件加载不到.</p>
 <p>好的,为了通过hexo直接把项目直接发布到github仓库的master分支,需要再安装一个模块:</p>
 <blockquote>
-<p>npm install hexo-deployer-git–save</p>
+<p>npm install hexo-deployer-git –save-dev</p>
 </blockquote>
 <p>执行如下命令,静态站点就push到github上面去啦:</p>
 <blockquote>
@@ -121,7 +121,7 @@
 </blockquote>
 <p>这个命令实际上是把我们刚才执行<code>hexo generate</code>所生成的<code>public</code>文件夹里面的所有内容,既是静态站点,push到了github的master分支上面;</p>
 <p>每次部署的步骤,可以按照这样来:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># hexo clean  # 如果不是重新调整了目录结构，不建议执行这个命令，会重新生成文章的时间</span></span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <p>如果需要给博文添加标签或者分类,可以直接在markdown文件顶部这样设置:</p>
 <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: HighPay Zoom博客系统搭建说明</span><br><span class="line">categories: [杂谈]</span><br><span class="line"><span class="section">tags: [Hexo]</span><br><span class="line">---</span></span><br></pre></td></tr></table></figure>
 <p>其中title是博文的标题,categories是分类,tags是标签,如果有多个标签或者分类,按照这个格式进行添加:[a,b,c]</p>
@@ -155,7 +155,7 @@
 
   <span class="post-tags">
     <i class="icon-tags"></i>
-    <a href="/tags/ChinSyun-Pang/">ChinSyun Pang</a>, <a href="/tags/Hexo/">Hexo</a>
+    <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/ChinSyun-Pang/">ChinSyun Pang</a>
   </span>
 
 

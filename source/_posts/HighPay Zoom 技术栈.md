@@ -1,5 +1,6 @@
 ---
 title: HighPay Zoom技术栈
+date: 2016-05-02
 categories: [杂谈]
 tags: [HighPay Zoom Group]
 ---

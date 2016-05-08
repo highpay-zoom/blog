@@ -56,7 +56,7 @@ deploy:
 
 好的,为了通过hexo直接把项目直接发布到github仓库的master分支,需要再安装一个模块:
 
-> npm install hexo-deployer-git--save
+> npm install hexo-deployer-git --save-dev
 
 执行如下命令,静态站点就push到github上面去啦:
 
@@ -67,7 +67,7 @@ deploy:
 每次部署的步骤,可以按照这样来:
 
 ```bash
-hexo clean
+# hexo clean  # 如果不是重新调整了目录结构，不建议执行这个命令，会重新生成文章的时间
 
 hexo generate
 

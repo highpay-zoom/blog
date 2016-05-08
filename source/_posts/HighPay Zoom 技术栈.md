@@ -31,6 +31,8 @@ zookeeper底层原理，选举算法
 
 ## 分布式事务
 
+[六个可以替代传统事务解决并发问题的建议](http://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=512113370&idx=1&sn=2bb15bd8e483e23c9e2b89976598a460#rd)
+
 # 消息
 
 ## Kafka

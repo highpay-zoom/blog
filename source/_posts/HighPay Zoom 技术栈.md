@@ -54,3 +54,12 @@ Redis集群
 
 [JVM笔记系列](http://www.itzhai.com/topic/jvm)
 
+# 资源
+
+[书籍列表](http://mp.weixin.qq.com/s?__biz=MjM5MzA0ODkyMA==&mid=2655071577&idx=1&sn=025cf6aa58e3b4d385521783d63b9d5e&scene=23&srcid=0510yLJ00H4FD60PPyODhC9O#rd)
+
+[阿里中间件团队博客](http://jm.taobao.org/)
+
+[你离顶尖Java程序员，只差这11本书的距离](http://www.techug.com/distance)
+
+
